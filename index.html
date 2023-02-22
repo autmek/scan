@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scan Behind Login</title>
+    <script>
+      navigator.globalPrivacyControl = false;
+    </script>
+    
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-MWG6BBV");
+    </script>
+
+    <script>
+      setTimeout(() => {
+        const t = new Date(Date.now() + 86400 * 1000).toUTCString();
+        document.cookie =
+          "testcookie1=testcookie;expires=" + t + ";path=/;SameSite=Strict;";
+      }, 10000);
+      setTimeout(() => {
+        const t = new Date(Date.now() + 86400 * 1000).toUTCString();
+        document.cookie =
+          "testcookie2=testcookie;expires=" + t + ";path=/;SameSite=Strict;";
+      }, 20000);
+      setTimeout(() => {
+        const t = new Date(Date.now() + 86400 * 1000).toUTCString();
+        document.cookie =
+          "testcookie3=testcookie;expires=" + t + ";path=/;SameSite=Strict;";
+      }, 30000);
+    </script>
+
+    <script>
+      function showForm() {
+        document.getElementById("loginform").style.display = "block";
+      }
+      function loginUser() {
+        const t = new Date(Date.now() + 86400 * 1000).toUTCString();
+        document.cookie =
+          "testcookielogin=testcookie;expires=" +
+          t +
+          ";path=/;SameSite=Strict;";
+      }
+    </script>
+    
+  </head>
+  <body>
+    
+    <h3 id="header-1">Login to this page</h3>
+    
+  
+    <button
+      id="logintrigger"
+      style="display: block; margin-top: 10px; margin-bottom: 10px"
+      onclick="showForm()"
+    >
+      click here to show form
+    </button>
+    <div
+      id="loginform"
+      style="display: none; margin-top: 30px; margin-bottom: 30px"
+    >
+      <label for="emailfield">User email</label>
+      <input type="text" id="emailfield" />
+      <label for="passwordfield">User password</label>
+      <input type="password" id="passwordfield" />
+      <button type="button" id="loginbutton" onclick="loginUser()">
+        click here to login
+      </button>
+    </div>
+    
+    <div></div>
+  </body>
+</html>
