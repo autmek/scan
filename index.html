@@ -23,6 +23,7 @@
       })(window, document, "script", "dataLayer", "GTM-MWG6BBV");
     </script>
 
+<!-- this script will set cookies-->
     <script>
       setTimeout(() => {
         const t = new Date(Date.now() + 86400 * 1000).toUTCString();
@@ -37,9 +38,11 @@
       setTimeout(() => {
         const t = new Date(Date.now() + 86400 * 1000).toUTCString();
         document.cookie =
-          "testcookie3=testcookie;expires=" + t + ";path=/;SameSite=Strict;";
+          "testcookie3=testcookie;expires=" + t + ";path=/;SameSite=Strict; description=third cookie";
       }, 30000);
     </script>
+
+<!-- This below script will set a cookie on login -->
 
     <script>
       function showForm() {
